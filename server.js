@@ -4,24 +4,8 @@ var bodyparser = require('body-parser');
 var path = require('path');
 
 var app = express();
-var PORT = 3000;
+var PORT = 5000;
 
-function handleRequest(req, res){
-
-	var url_parts = url.parse(req.url);
-
-	switch (url_parts.pathname) {
-    case '/':
-    	display_home(url_parts.pathname, req, res);
-    	break;
-	case '/survey':
-		display_survey(url_parts.pathname, req, res);
-		break;
-	default:
-		display_404(url_parts.pathname, req, res);
-	}
-
-}
 
 // Sets up the Express app to handle data parsing
 app.use(bodyparser.json());
